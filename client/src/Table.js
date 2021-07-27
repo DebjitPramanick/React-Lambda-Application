@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
-
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 const Table = () => {
 
@@ -61,6 +61,7 @@ const Table = () => {
                                 <button className="ok" onClick={() => remove(d.id)}><ThumbUpIcon className="icon"/></button>
                                 <button className="nook" onClick={() => remove(d.id)}><ThumbDownIcon className="icon"/></button>
                                 <button className="text" onClick={() => remove(d.id)}><p>50%</p></button>
+                                <button className="cloud" onClick={() => remove(d.id)}><CloudUploadIcon className="icon"/></button>
                             </div>
                         </td>
                         <td>{d.amount}</td>
