@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
@@ -32,7 +32,17 @@ const Table = () => {
         }
     ]
 
-    const [data, setData] = useState(dummyData)
+    const [data, setData] = useState([])
+
+    const fetchData = async () => {
+        const res = await fetch('https://c2u7kp5dz4.execute-api.us-east-2.amazonaws.com/Development')
+        const d = await res.json()
+        setData(d.Items)
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
 
 
     const remove = (id) => {
